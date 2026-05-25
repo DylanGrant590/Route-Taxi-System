@@ -16,17 +16,20 @@ public class Driver {
 
         while (running) {
 
-            try {
+            try { // Program needs updating. 
 
                 System.out.println("***********************");
                 System.out.println("*  Route Taxi System  *");
                 System.out.println("***********************");
                 System.out.println("1. Add Driver");
-                System.out.println("2. Add Route");
-                System.out.println("3. Calculate Fare");
-                System.out.println("4. View Daily Earnings");
-                System.out.println("5. View Driver");
-                System.out.println("6. Exit");
+                System.out.println("2. View All Drivers");
+                System.out.println("3. Search Driver by TRN");
+                System.out.println("4. Update Driver");
+                System.out.println("5. Delete Driver");
+                System.out.println("6. Add Vechile");
+                System.out.println("7. Calculate Fare");
+                System.out.println("8. View Daily Earnings");
+                System.out.println("9. Exit");
 
                 System.out.print("\nPlease enter a number from the menu: ");
 
@@ -67,28 +70,56 @@ public class Driver {
                                 "",
                                 0.0,
                                 0.0,
-                                "Driver Record");
+                                "Driver Record.");
 
                         System.out.println("\nDriver Added Successfully!");
                         break;
 
                     case 2:
 
-                        System.out.print("Route: ");
-                        String route = scanner.nextLine();
+                    	  if (driver == null) {
 
-                        System.out.println("Route Added: " + route);
-                        break;
+                              System.out.println("No driver has been added yet.");
+                              System.out.println("\n");
+
+                          } else {
+
+                              System.out.println(driver);
+                          }
+
+                          break;
 
                     case 3:
 
-                        System.out.print("Fare: ");
-                        double fare = scanner.nextDouble();
-
-                        System.out.println("Fare is: $" + fare);
+                        System.out.print("Search driver by TRN");
+                        double sdtrn = scanner.nextDouble();
                         break;
-
-                    case 4:
+                        
+                    case 4: 
+                    	
+                    	System.out.println("Update Driver");
+                    	String update = scanner.nextLine();
+                    	break; 
+                    	
+                    case 5:
+                    	
+                    	System.out.println("Delete driver");
+                    	String delete = scanner.nextLine();
+                    	break;
+                    	
+                    case 6:
+                    	
+                    	System.out.println("Add vechile");
+                    	String vechile = scanner.nextLine();
+                    	break;
+                    	
+                    case 7:
+                    	
+                    	System.out.println("Calculate fare");
+                    	double fare = scanner.nextDouble();
+                    	break; 
+                    	
+                    case 8:
 
                         System.out.print("Total Earnings: ");
                         double earn = scanner.nextDouble();
@@ -103,22 +134,9 @@ public class Driver {
                         }
 
                         break;
-                        
-                    case 5:
-                    	
-                    	  if (driver == null) {
+           
 
-                              System.out.println("No driver has been added yet.");
-                              System.out.println("\n");
-
-                          } else {
-
-                              System.out.println(driver);
-                          }
-
-                          break;
-
-                    case 6:
+                    case 9:
 
                         System.out.println("Thank you for using our service!");
                         running = false;
